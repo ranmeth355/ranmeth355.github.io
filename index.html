@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dark Liquid Glass Hub</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide-icons/0.28.1/css/lucide.min.css">
+    <title>My Liquid Glass Hub</title>
     <style>
         :root {
-            /* 1. Darker Colors */
-            --glass-bg: rgba(20, 20, 20, 0.6); /* Rich smoked glass */
-            --glass-border: rgba(148, 163, 184, 0.1);
-            --text-main: #f8fafc; /* Bright text for contrast */
-            --text-muted: #cbd5e1;
-            /* Base shadow for static elements */
-            --shadow-base: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-main: #f8fafc;
+            --text-muted: #e2e8f0;
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, sans-serif;
-            /* 1. Darker background gradient */
-            background: linear-gradient(45deg, #1e293b, #0f172a, #111827, #1e1b4b);
+            /* A fluid, animated gradient background to make the glass effect pop */
+            background: linear-gradient(45deg, #4f46e5, #0ea5e9, #10b981, #6366f1);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             color: var(--text-main);
@@ -29,7 +25,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Recommended for moving shadow effect */
         }
 
         @keyframes gradientBG {
@@ -47,47 +42,28 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
-        /* The core Dark Liquid Glass Effect */
+        /* The core iOS Liquid Glass Effect */
         .glass-widget {
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px); /* Required for iOS Safari */
             border: 1px solid var(--glass-border);
-            border-radius: 32px;
+            border-radius: 32px; /* Smooth Apple-style curves */
             padding: 30px;
-            box-shadow: var(--shadow-base);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
         }
 
         .glass-widget:hover {
             transform: translateY(-8px);
-            box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.5);
-            background: rgba(30, 30, 30, 0.7);
+            box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .header-widget {
             grid-column: 1 / -1;
             text-align: center;
             padding: 50px 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* 2. Interactive Moving Shadows (applied to a large panel) */
-        #lifestyle-panel {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 40px;
-            position: relative;
-            transform-style: preserve-3d;
-            box-shadow: 0 0 0 0 rgba(0,0,0,0); /* Starting point for script */
-        }
-
-        @media (max-width: 600px) {
-            #lifestyle-panel { grid-template-columns: 1fr; }
         }
 
         h1 { 
@@ -95,18 +71,12 @@
             font-size: 2.8rem; 
             font-weight: 700; 
             letter-spacing: -1px; 
-            display: flex;
-            align-items: center;
-            gap: 15px;
         }
         
         h2 { 
             margin: 0 0 15px 0; 
             font-size: 1.5rem; 
             font-weight: 600; 
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
         p { 
@@ -116,7 +86,6 @@
             font-size: 1.05rem; 
         }
         
-        /* 3. Icon and Tag Styles */
         .tag-container {
             display: flex;
             flex-wrap: wrap;
@@ -125,23 +94,13 @@
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            color: #e2e8f0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .tag .lucide {
-            width: 16px;
-            height: 16px;
-            color: #a78bfa; /* subtle accent color for icons */
         }
     </style>
 </head>
@@ -149,85 +108,40 @@
 
     <div class="container">
         <div class="glass-widget header-widget">
-            <h1><i class="lucide lucide-hand"></i>Hello from Kurunegala 👋</h1>
-            <p>Welcome to my darker personal dashboard. A modular space built with dynamic liquid glass aesthetics.</p>
+            <h1>Hello from Kurunegala 👋</h1>
+            <p>Welcome to my personal dashboard. A modular space built with modern liquid glass aesthetics.</p>
         </div>
 
         <div class="glass-widget">
-            <h2><i class="lucide lucide-monitor"></i>Setup & Gaming</h2>
-            <p>Optimizing hardware, setting up containers, and hitting the tracks.</p>
+            <h2>Setup & Gaming</h2>
+            <p>Optimizing hardware from Ryzen to Radeon, setting up Docker containers, and hitting the tracks in Need for Speed and Forza Horizon.</p>
             <div class="tag-container">
-                <span class="tag"><i class="lucide lucide-cpu"></i>PC Hardware</span>
-                <span class="tag"><i class="lucide lucide-box"></i>Minecraft</span>
-                <span class="tag"><i class="lucide lucide-code"></i>Github Copilot</span>
+                <span class="tag">PC Hardware</span>
+                <span class="tag">Minecraft</span>
+                <span class="tag">Github Copilot</span>
             </div>
         </div>
 
         <div class="glass-widget">
-            <h2><i class="lucide lucide-car"></i>Automotive & Anime</h2>
-            <p>Tracking high-performance engineering and the latest episodes.</p>
+            <h2>Automotive & Anime</h2>
+            <p>Tracking the engineering behind the Lamborghini Revuelto, BMW M5, and F-22 Raptors, alongside the latest episodes of Jujutsu Kaisen and Demon Slayer.</p>
             <div class="tag-container">
-                <span class="tag"><i class="lucide lucide-zap"></i>Revuelto</span>
-                <span class="tag"><i class="lucide lucide-car"></i>BMW M5</span>
-                <span class="tag"><i class="lucide lucide-plane"></i>F-22 Raptor</span>
-                <span class="tag"><i class="lucide lucide-ghost"></i>Jujutsu Kaisen</span>
-                <span class="tag"><i class="lucide lucide-shield"></i>Demon Slayer</span>
-                <span class="tag"><i class="lucide lucide-user"></i>Solo Leveling</span>
+                <span class="tag">Solo Leveling</span>
+                <span class="tag">Aviation</span>
+                <span class="tag">Car Tech</span>
             </div>
         </div>
 
-        <div class="glass-widget" id="lifestyle-panel">
-            <div>
-                <h2><i class="lucide lucide-dumbbell"></i>Lifestyle</h2>
-                <p>Maintaining calisthenics routines, Japanese study, and health.</p>
-                <div class="tag-container">
-                    <span class="tag"><i class="lucide lucide-target"></i>Calisthenics</span>
-                    <span class="tag"><i class="lucide lucide-languages"></i>Duolingo</span>
-                </div>
-            </div>
-            <div>
-                <h2><i class="lucide lucide-brain"></i>Systems</h2>
-                <p>Building task systems in Obsidian and Notion for productivity.</p>
-                <div class="tag-container">
-                    <span class="tag"><i class="lucide lucide-book-open"></i>Obsidian</span>
-                    <span class="tag"><i class="lucide lucide-layout-grid"></i>Notion</span>
-                </div>
+        <div class="glass-widget">
+            <h2>Lifestyle & Systems</h2>
+            <p>Building out daily task systems in Obsidian and Notion, learning Japanese, and maintaining bodyweight calisthenics routines.</p>
+            <div class="tag-container">
+                <span class="tag">Calisthenics</span>
+                <span class="tag">Productivity</span>
+                <span class="tag">Duolingo</span>
             </div>
         </div>
     </div>
 
-    <script>
-        const panel = document.getElementById('lifestyle-panel');
-
-        function moveShadow(e) {
-            const rect = panel.getBoundingClientRect();
-            const panelWidth = rect.width;
-            const panelHeight = rect.height;
-
-            // Calculate cursor position relative to the center of the panel
-            const cursorX = e.clientX - rect.left - panelWidth / 2;
-            const cursorY = e.clientY - rect.top - panelHeight / 2;
-
-            // Define the intensity of the effect
-            const movementIntensity = 20; // Lower number = more movement
-
-            // Map the cursor position to a slight panel rotation (optional, adds realism)
-            const rotateX = cursorY / movementIntensity;
-            const rotateY = -cursorX / movementIntensity;
-
-            // Calculate the dynamic shadow offset (shift the shadow *opposite* to the tilt)
-            const shadowX = -(cursorX / (movementIntensity * 2));
-            const shadowY = -(cursorY / (movementIntensity * 2));
-            const shadowBlur = Math.abs(cursorX) / 10 + Math.abs(cursorY) / 10 + 30; // dynamic blur
-
-            // Apply the style updates
-            panel.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            panel.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px 0 rgba(0, 0, 0, 0.6)`;
-        }
-
-        // Add event listener to track mouse movement over the body, 
-        // applying the effect when the mouse is near the panel.
-        document.body.addEventListener('mousemove', moveShadow);
-    </script>
 </body>
 </html>
