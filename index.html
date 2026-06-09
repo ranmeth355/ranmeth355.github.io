@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Liquid Glass Hub</title>
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-main: #f8fafc;
+            --text-muted: #e2e8f0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, sans-serif;
+            /* A fluid, animated gradient background to make the glass effect pop */
+            background: linear-gradient(45deg, #4f46e5, #0ea5e9, #10b981, #6366f1);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 40px auto;
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* The core iOS Liquid Glass Effect */
+        .glass-widget {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px); /* Required for iOS Safari */
+            border: 1px solid var(--glass-border);
+            border-radius: 32px; /* Smooth Apple-style curves */
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        .glass-widget:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .header-widget {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        h1 { 
+            margin: 0 0 10px 0; 
+            font-size: 2.8rem; 
+            font-weight: 700; 
+            letter-spacing: -1px; 
+        }
+        
+        h2 { 
+            margin: 0 0 15px 0; 
+            font-size: 1.5rem; 
+            font-weight: 600; 
+        }
+        
+        p { 
+            margin: 0; 
+            line-height: 1.6; 
+            color: var(--text-muted); 
+            font-size: 1.05rem; 
+        }
+        
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="glass-widget header-widget">
+            <h1>Hello from Kurunegala 👋</h1>
+            <p>Welcome to my personal dashboard. A modular space built with modern liquid glass aesthetics.</p>
+        </div>
+
+        <div class="glass-widget">
+            <h2>Setup & Gaming</h2>
+            <p>Optimizing hardware from Ryzen to Radeon, setting up Docker containers, and hitting the tracks in Need for Speed and Forza Horizon.</p>
+            <div class="tag-container">
+                <span class="tag">PC Hardware</span>
+                <span class="tag">Minecraft</span>
+                <span class="tag">Github Copilot</span>
+            </div>
+        </div>
+
+        <div class="glass-widget">
+            <h2>Automotive & Anime</h2>
+            <p>Tracking the engineering behind the Lamborghini Revuelto, BMW M5, and F-22 Raptors, alongside the latest episodes of Jujutsu Kaisen and Demon Slayer.</p>
+            <div class="tag-container">
+                <span class="tag">Solo Leveling</span>
+                <span class="tag">Aviation</span>
+                <span class="tag">Car Tech</span>
+            </div>
+        </div>
+
+        <div class="glass-widget">
+            <h2>Lifestyle & Systems</h2>
+            <p>Building out daily task systems in Obsidian and Notion, learning Japanese, and maintaining bodyweight calisthenics routines.</p>
+            <div class="tag-container">
+                <span class="tag">Calisthenics</span>
+                <span class="tag">Productivity</span>
+                <span class="tag">Duolingo</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
